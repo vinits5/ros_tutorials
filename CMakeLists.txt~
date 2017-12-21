@@ -194,3 +194,8 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(name_msg_publish src/name_msg_publish.cpp)
+target_link_libraries(name_msg_publish ${catkin_LIBRARIES})
+add_dependencies(name_msg_publish ros_tutorials_generate_messages_cpp)
+
