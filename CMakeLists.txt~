@@ -199,3 +199,7 @@ add_executable(name_msg_publish src/name_msg_publish.cpp)
 target_link_libraries(name_msg_publish ${catkin_LIBRARIES})
 add_dependencies(name_msg_publish ros_tutorials_generate_messages_cpp)
 
+add_executable(name_msg_subscribe src/name_msg_subscribe.cpp)
+target_link_libraries(name_msg_subscribe ${catkin_LIBRARIES})
+add_dependencies(name_msg_subscribe ros_tutorials_generate_messages_cpp)
+
