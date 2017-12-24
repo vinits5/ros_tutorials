@@ -211,3 +211,6 @@ add_executable(add_ints_client src/add_ints_client.cpp)
 target_link_libraries(add_ints_client ${catkin_LIBRARIES})
 add_dependencies(add_ints_client ros_tutorials_gencpp)
 
+add_executable(name_msg_subscribe_given_rate src/name_msg_subscribe_given_rate.cpp)
+target_link_libraries(name_msg_subscribe_given_rate ${catkin_LIBRARIES})
+add_dependencies(name_msg_subscribe_given_rate ros_tutorials_generate_messages_cpp)

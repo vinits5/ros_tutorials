@@ -1,13 +1,17 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "ros_tutorials/Name.h"
+#include <string>
+using namespace std;
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
  */
 void chatterCallback(const ros_tutorials::Name::ConstPtr& msg)
 {
-  ROS_INFO("I heard: [%s]", msg->name.c_str());
+  string s;
+  s=msg->name.c_str();
+  cout<<s<<endl;
 }
 
 int main(int argc, char **argv)
@@ -47,14 +51,19 @@ int main(int argc, char **argv)
    * away the oldest ones.
    */
 
-  ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+  ros::Subscriber sub = n.subscribe("chatter", 1, chatterCallback);
+  ros::Rate rate(1);
+  while(ros::ok()){		
+	ros::spinOnce();
+	rate.sleep();
+  }
 
   /**
    * ros::spin() will enter a loop, pumping callbacks.  With this version, all
    * callbacks will be called from within this thread (the main one).  ros::spin()
    * will exit when Ctrl-C is pressed, or the node is shutdown by the master.
    */
-  ros::spin();
+//  ros::spin();
 
   return 0;
 }
