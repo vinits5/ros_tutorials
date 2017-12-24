@@ -1,0 +1,4 @@
+<launch>
+	<node name="publisher" pkg="ros_tutorials" type="name_msg_publish" />
+	<node name="subscriber" pkg="ros_tutorials" type="name_msg_subscribe" />
+</launch>
